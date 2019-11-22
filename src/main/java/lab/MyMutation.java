@@ -1,4 +1,4 @@
-package lab2;
+package lab;
 
 import org.uncommons.watchmaker.framework.EvolutionaryOperator;
 
@@ -18,7 +18,7 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
                 if(random.nextDouble() < mutation_probability) {
                     // Higher exponents give better results but less likely convergence since
                     // exploration phase is shorter.
-                    new_individual[j] += random.nextGaussian() / Math.pow(generation, 1.2);
+                    new_individual[j] += random.nextGaussian() * 0.1;
                     new_individual[j] = Math.min(5, Math.max(-5, new_individual[j]));
                 }
             }
